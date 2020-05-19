@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import seaborn as sb
 
 filename = "Final_MitoSegNet_656_training_log.csv"
-path = "C:/Users/Christian/Desktop/Fourth_CV/Validation_data/" + filename
+path = "/" + filename
 
 table = pd.read_csv(path)
 

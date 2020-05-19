@@ -14,7 +14,7 @@ from Plot_Significance import significance_bar
 from scipy.stats import chi2_contingency
 
 
-path = "C:/Users/Christian/Desktop/Fourth_CV/Morph_Distribution_Comparison_Extended"
+path = ""
 
 
 file_list = ['MitoSegNet_Morph_Dist_comparison.csv', 'Finetuned Fiji U-Net_Morph_Dist_comparison.csv' ,

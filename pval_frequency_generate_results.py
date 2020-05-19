@@ -21,7 +21,7 @@ import warnings
 warnings.simplefilter("ignore", UserWarning)
 warnings.simplefilter("ignore", FutureWarning)
 
-path = "C:/Users/Christian/Desktop/Fourth_CV/Complete_images"
+path = ""
 
 
 # Get image data

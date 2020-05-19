@@ -19,7 +19,7 @@ from effect_size import cohens_d
 import warnings
 warnings.simplefilter("ignore", UserWarning)
 
-path = "C:/Users/Christian/Desktop/Fourth_CV/Morph_Energy_Distance_Extended"
+path = ""
 
 file_list = ['MitoSegNet_EnergyDistance.csv', 'Fiji_U-Net_EnergyDistance.csv', 'Ilastik_EnergyDistance.csv',
              'Gaussian_EnergyDistance.csv', 'Hessian_EnergyDistance.csv', 'Laplacian_EnergyDistance.csv']

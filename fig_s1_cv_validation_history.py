@@ -9,7 +9,7 @@ import os
 import matplotlib.pyplot as plt
 import seaborn as sb
 
-path = "C:/Users/Christian/Desktop/Fourth_CV/Validation_data/Cross_Val"
+path = ""
 
 csv_list = os.listdir(path)
 

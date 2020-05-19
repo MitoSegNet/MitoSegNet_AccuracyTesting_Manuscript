@@ -1,11 +1,7 @@
 """
-
 Calculating the dice coefficient of segmentation predictions
-
 Calculating statistics based on dice coefficient results
-
 Plotting dice coefficient results
-
 """
 
 import numpy as np
@@ -20,11 +16,12 @@ from Plot_Significance import significance_bar
 from effect_size import cohens_d
 
 import warnings
+
 warnings.simplefilter("ignore", UserWarning)
 warnings.simplefilter("ignore", FutureWarning)
 
 # path where images are stored
-path = "C:/Users/Christian/Desktop/Fourth_CV/Complete_images"
+path = ""
 
 # name of folder in which ground truth images are stored
 gt_folder = "Ground_Truth"
@@ -42,7 +39,6 @@ for folder in seg_list:
 
     dice_l = []
     for imgs in img_list:
-
         gt = cv2.imread(path + os.sep + gt_folder + os.sep + imgs, cv2.IMREAD_GRAYSCALE)
         pred = cv2.imread(path + os.sep + folder + os.sep + imgs, cv2.IMREAD_GRAYSCALE)
 
@@ -52,8 +48,8 @@ for folder in seg_list:
 
     all_data[folder] = dice_l
 
-#print(all_data)
-#all_data.to_csv(path + "/dice_coefficient_table.csv")
+# print(all_data)
+# all_data.to_csv(path + "/dice_coefficient_table.csv")
 
 
 """
@@ -64,15 +60,15 @@ for seg in all_data:
 
 # hypothesis testing
 kwt = kruskal([all_data["MitoSegNet"], all_data["Finetuned Fiji U-Net"], all_data["Ilastik"], all_data["Gaussian"],
-                  all_data["Hessian"], all_data["Laplacian"]])
-#print(kwt)
+               all_data["Hessian"], all_data["Laplacian"]])
+# print(kwt)
 
 dt = posthoc_dunn([all_data["MitoSegNet"], all_data["Finetuned Fiji U-Net"], all_data["Ilastik"], all_data["Gaussian"],
-                  all_data["Hessian"], all_data["Laplacian"]])
-#print(dt)
-#dt.to_excel("dc_posthoc.xlsx")
+                   all_data["Hessian"], all_data["Laplacian"]])
+# print(dt)
+# dt.to_excel("dc_posthoc.xlsx")
 
-#print(cohens_d(all_data["MitoSegNet"], all_data["Ilastik"]))
+# print(cohens_d(all_data["MitoSegNet"], all_data["Ilastik"]))
 
 
 # pos_y and pos_x determine position of bar, p sets the number of asterisks, y_dist sets y distance of the asterisk to
@@ -96,15 +92,6 @@ n.tick_params(axis="x", labelsize=34, rotation=45)
 n.tick_params(axis="y", labelsize=28)
 
 plt.show()
-
-
-
-
-
-
-
-
-
 
 
 

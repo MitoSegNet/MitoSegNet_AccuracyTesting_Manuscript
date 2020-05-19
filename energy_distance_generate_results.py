@@ -20,7 +20,7 @@ import warnings
 warnings.simplefilter("ignore", UserWarning)
 warnings.simplefilter("ignore", FutureWarning)
 
-org_path = "C:/Users/Christian/Desktop/Fourth_CV"
+org_path = ""
 path = org_path + os.sep + "Complete_images"
 save_path = org_path + os.sep + "Morph_Energy_Distance_Extended"
 
@@ -128,7 +128,6 @@ def get_energy_distance(path, save_path, seg_name):
             print(normaltest(gt)[1])
             print(normaltest(seg)[1])
 
-
     df["Image"] = gt_image_list
     df["Area"] = list_area
     df["Eccentricity"] = list_ecc
@@ -141,13 +140,12 @@ def get_energy_distance(path, save_path, seg_name):
     df["Curvature index"] = list_ci
     df["Mean intensity"] = list_i
 
-
     # raw data
     df.to_csv(save_path + os.sep + seg_name + "_EnergyDistance.csv")
 
 
 # morph distribution comparison
-seg_list = ["MitoSegNet", "Finetuned Fiji U-Net", "Ilastik", "Gaussian", "Hessian", "Laplacian"]
+seg_list = ["MitoSegNet", "Ilastik", "Gaussian", "Hessian", "Laplacian"]
 
 for seg in seg_list:
     get_energy_distance(path, save_path, seg)
